@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "Tile";
+}
+@model IList<Product>
+
+<h2>All Products</h2>
+
+<div class="tile">
+    @foreach (var product in Model)
+    {
+    <div class="tileproduct">
+        <a asp-controller="Products" asp-action="Detail" asp-route-id="@product.ProductId" style="text-decoration: none !important;">
+            <img src="~/images/@product.ImageName" id="tileimage" />
+        </a>
+        <br>
+        <p id="detailname">@product.Name</p>
+        @if (product.IsTopSeller)
+        {
+            <p id="bestseller" style="margin-left: 0px;">BEST SELLER!</p>
+        }
+        <p class="producttext" id="manufacturer">by @product.Manufacturer</p>
+        @if (product.RemainingStock <= 2)
+        {
+            <p class="producttext" style="color: dodgerblue; font-size: 1rem;">Only @product.RemainingStock left!</p>
+        }
+        <p class="producttext" id="price">$@product.Price</p>
+        <label class="producttext" id="weight" style="font-weight:bold;">Weight&thinsp;</label>
+        <label class="producttext" id="weight">@product.WeightInLbs lbs.</label>
+        <br>
+        @if (product.AverageRating >= 5)
+        {
+            <img src="~/images/5-star.png" id="rating" />
+        }
+        else if (product.AverageRating >= 4)
+        {
+            <img src="~/images/4-star.png" id="rating" />
+        }
+        else if (product.AverageRating >= 3)
+        {
+            <img src="~/images/3-star.png" id="rating" />
+        }
+        else if (product.AverageRating >= 2)
+        {
+            <img src="~/images/2-star.png" id="rating" />
+        }
+        else
+        {
+            <img src="~/images/1-star.png" id="rating" />
+        }
+
+    </div>
+    }
+</div>
+

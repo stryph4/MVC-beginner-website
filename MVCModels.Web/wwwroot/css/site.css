@@ -1,0 +1,173 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.wrapper {
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:    "header"
+                            "content"
+                            "image productinfo"
+                            "footer";
+}
+
+.productimage {
+    float: left;
+    display: inline-block;
+    margin-right: 50px;
+    grid-area: image;
+    min-height: 120px;
+}
+
+.content {
+    grid-area: content;
+    width: 800px;
+}
+
+header {
+    grid-area: header;
+    font-size: 3rem;
+}
+
+footer {
+    grid-area: footer;
+}
+
+.productinfo {
+    display: inline-block;
+    margin-bottom: 1%;
+    width: 800px;
+    min-width: 800px;
+    border-bottom: solid;
+    border-color: lightgray;
+    grid-area: productinfo;
+}
+
+.producttext {
+    margin: 0px 0px 0px 0px;
+}
+
+.description{
+    font-size: .9rem;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.details{
+    width: 375px;
+    max-width: 375px;
+    min-width: 375px;
+}
+
+.tile{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.tileproduct{
+    width: 300px;
+    min-width:300px;
+    height: 240px;
+    min-height: 240px;
+}
+
+#rating{
+    vertical-align: top;
+    margin-top: -5px;
+    max-width: 85px;
+    min-width: 85px;
+}
+
+#bestseller {
+    color: red;
+    font-size: 1.3rem;
+    font-weight: initial;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}
+
+#manufacturer {
+    font-size: .9rem;
+    margin-bottom: 0px;
+}
+
+#weight {
+    font-size: .9rem;
+    vertical-align: top;
+    margin-bottom: 0px;
+    font-weight: initial;
+}
+
+#productname {
+    font-size: 1.3rem;
+    font-weight: initial;
+}
+
+#price{
+    font-weight: bold;
+    color: #cc0000;
+    font-size: 1rem;
+    margin-bottom 0px;
+}
+
+#imageresize {
+    display: inline-block;
+    max-width: 120px !important;
+    min-width: 120px !important;
+}
+
+#detailimage{
+    display: inline-block;
+    max-width: 300px;
+    margin-left: -80px;
+    float: left;
+}
+
+#detailname{
+    display: inline-block;
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+#tileimage{
+    height: 100px;
+}
